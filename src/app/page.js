@@ -1,112 +1,171 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+  const [isDisplay, setIsDisplay] = useState(false);
+  const [isDisplay2, setIsDisplay2] = useState(false);
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+  const activateDisplay = () => {
+    return setIsDisplay(!isDisplay);
+  };
+
+  const activateDisplay2 = () => {
+    return setIsDisplay2(!isDisplay2);
+  };
+
+  return (
+    <main className="flex flex-col justify-center items-center">
+      <div className="image-top-home">
+        <img
+          src="https://res-console.cloudinary.com/dlfp2xvis/thumbnails/v1/image/upload/v1720885918/RGllbkNoYW4vZHJpbGxkb3duX2NvcGllX3dkcnBkOQ==/drilldown"
+          alt="img-relax"
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="container">
+        <div className="title-home-top">
+          Soyez les bienvenus sur Relaxation Dien Chan
+        </div>
+        <div className="text-home">
+          Découvrez le pouvoir revitalisant du Dien Chan, une méthode innovante
+          de réflexologie faciale vietnamienne. Réveillez votre éclat naturel et
+          revitalisez votre bien-être avec nos techniques douces et efficaces.
+          Offrez-vous une expérience de relaxation profonde et redécouvrez
+          l'harmonie intérieure grâce à notre approche holistique. Embrassez une
+          peau radieuse et une détente totale avec le Dien Chan – votre chemin
+          vers une santé équilibrée et une beauté naturelle.
+        </div>
+        <div className="title-home">Les outils pour pratiquer</div>
+        <div
+          className="image-home"
+          onClick={() => {
+            activateDisplay();
+          }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div>
+            <img
+              src="https://res-console.cloudinary.com/dlfp2xvis/thumbnails/v1/image/upload/v1720880176/RGllbkNoYW4vSU1HXzIwMjEwMjI0XzE2MjYxNV9jdHZxcHI=/drilldown"
+              alt="tools-dienchan"
+            />
+          </div>
+        </div>
+        {isDisplay ? (
+          <div
+            className="popup-overlay"
+            onClick={() => {
+              activateDisplay();
+            }}
+          >
+            <div className="popup-home">
+              <img
+                src="https://res-console.cloudinary.com/dlfp2xvis/thumbnails/v1/image/upload/v1720880176/RGllbkNoYW4vSU1HXzIwMjEwMjI0XzE2MjYxNV9jdHZxcHI=/drilldown"
+                alt="tools-full-size"
+              />
+            </div>
+          </div>
+        ) : null}
+        <div className="text-home">
+          Le Dien Chan utilise une variété d'outils spécialisés pour stimuler
+          les points réflexes du visage, favorisant ainsi la relaxation et le
+          rééquilibrage énergétique. Des stylets en métal ou en bois sont
+          utilisés pour appliquer des pressions précises, tandis que les
+          rouleaux de massage améliorent la circulation et détendent les muscles
+          faciaux. Des instruments d'acupression ciblent les points spécifiques
+          pour soulager les tensions et améliorer le flux énergétique. Les
+          pierres précieuses comme le jade contribuent aux propriétés
+          énergétiques du traitement. Les plaques de réflexologie guident la
+          stimulation des zones réflexes, tandis que les miroirs facilitent le
+          diagnostic et l'application personnalisée des techniques. Ensemble,
+          ces outils enrichissent le Dien Chan en aidant à rétablir l'harmonie
+          intérieure et à promouvoir un bien-être global.
+        </div>
+        <div className="title-home">Bien-être personnel et professionnel</div>
+        <div className="text-home">
+          Sur le plan personnel, le Dien Chan est apprécié pour sa capacité à
+          réduire le stress et l'anxiété en favorisant une relaxation profonde.
+          En stimulant les points réflexes du visage, il permet également de
+          soulager les tensions musculaires et de promouvoir un meilleur
+          sommeil, facilitant ainsi une récupération physique et mentale
+          optimale. Professionnellement, le Dien Chan peut être bénéfique en
+          tant qu'outil de gestion du stress au travail. Les séances régulières
+          peuvent offrir des moments de pause nécessaires dans une journée bien
+          remplie, favorisant ainsi une meilleure gestion du stress et une
+          augmentation de la productivité. De plus, en améliorant la clarté
+          mentale et la capacité de concentration, cette pratique peut soutenir
+          une performance professionnelle optimale. En intégrant le Dien Chan
+          dans une routine de bien-être personnel et professionnel, il devient
+          un moyen efficace de promouvoir la santé globale, d'améliorer la
+          qualité de vie et de maintenir un équilibre harmonieux entre les
+          exigences du travail et les besoins personnels.
+        </div>
+        <div className="title-home">Recharger ses énergies</div>
+        <div className="text-home">
+          Plongez dans une parenthèse de bien-être absolu avec nos séances de 45
+          minutes de Dien Chan. Offrez-vous un moment de relaxation profonde où
+          chaque pression douce sur les points réflexes du visage libère les
+          tensions accumulées. Laissez-vous emporter par une sensation apaisante
+          tandis que votre corps se détend et que votre esprit se décompresse.
+          Nos praticiens expérimentés vous guident à travers cette expérience
+          revitalisante, visant à rééquilibrer votre énergie et à restaurer
+          votre vitalité. Offrez-vous ce luxe de détente et réveillez-vous
+          rafraîchi, revitalisé et prêt à affronter le monde avec sérénité.
+        </div>
+        <div className="title-home">Le Ying et le Yang</div>
+        <div className="text-home">
+          Ils symbolisent l'harmonie des forces opposées et complémentaires dans
+          l'univers. Dans le contexte du Dien Chan, cette dualité trouve son
+          écho à travers la stimulation des points réflexes du visage pour
+          rétablir l'équilibre énergétique du corps. En appliquant des pressions
+          précises avec des outils spécialisés, le Dien Chan cherche à
+          harmoniser les énergies Yin (froid, passif) et Yang (chaud, actif) du
+          visage, favorisant ainsi la santé physique et émotionnelle. Cette
+          approche holistique révèle comment l'équilibre entre le Yin et le Yang
+          dans le Dien Chan peut soutenir une harmonie intérieure et un
+          bien-être global.
+        </div>
+        <div className="title-home">Mon expertise pour vous</div>
+        <div className="text-home">
+          Émilie Lefevre, diplômée en Médecine avec spécialisation en Médecine
+          Traditionnelle Asiatique, apporte une expertise unique en Dien Chan.
+          Après avoir complété un voyage universitaire enrichissant en Asie,
+          elle s'est immergée dans l'étude approfondie de la réflexologie
+          faciale vietnamienne. Sa pratique intègre des techniques ancestrales
+          et des méthodes contemporaines pour offrir des soins holistiques et
+          personnalisés, visant à rééquilibrer l'énergie corporelle et à
+          promouvoir le bien-être global de ses patients.
+        </div>
+        <div className="title-home">Un espace de détente</div>
+        <div
+          className="image-home"
+          onClick={() => {
+            activateDisplay2();
+          }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div>
+            <img
+              src="https://res-console.cloudinary.com/dlfp2xvis/thumbnails/v1/image/upload/v1720965781/RGllbkNoYW4vSW1hZ2U1MS0yX29kaHdjaA==/drilldown"
+              alt="tools-dienchan"
+            />
+          </div>
+        </div>
+        {isDisplay2 ? (
+          <div
+            className="popup-overlay"
+            onClick={() => {
+              activateDisplay2();
+            }}
+          >
+            <div className="popup-home">
+              <img
+                src="https://res-console.cloudinary.com/dlfp2xvis/thumbnails/v1/image/upload/v1720965781/RGllbkNoYW4vSW1hZ2U1MS0yX29kaHdjaA==/drilldown"
+                alt="tools-full-size"
+              />
+            </div>
+          </div>
+        ) : null}
+        <div className="text-home">
+          Notre salon vous accueille et vous permet d'oublier le monde qui vous
+          entoure
+        </div>
       </div>
     </main>
   );

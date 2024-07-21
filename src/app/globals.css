@@ -111,6 +111,17 @@ main {
   border-radius: 5px;
 }
 
+.head-bio {
+  margin: 20px;
+  font-weight: 400;
+  color: blue;
+}
+
+.text-bio {
+  margin: 40px;
+  font-weight: 200;
+}
+
 .footer {
   font-family: "Fustat", sans-serif;
   bottom: 0;

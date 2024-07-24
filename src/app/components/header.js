@@ -25,9 +25,9 @@ export default function header() {
         <div className="header-title">
           <Link href={"/emilie-lefevre"}>Qui suis-je</Link>
         </div>
-        <div className="header-title">
+        {/* <div className="header-title">
           <Link href={"/avis"}>Avis des patients</Link>
-        </div>
+        </div> */}
         <div className="header-title">
           <Link href={"/tarifs"}>Tarifs</Link>
         </div>

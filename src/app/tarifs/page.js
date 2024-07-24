@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Tarifs() {
   const pricing = [
     { session: "Consultation Initiale", duration: "1 heure", price: "70€" },
@@ -12,9 +14,10 @@ export default function Tarifs() {
   ];
 
   return (
-    <div>
+    <main>
       <div style={styles.container}>
-        <h1 style={styles.header}>Tarifs des Séances de Dien Chan</h1>
+        <div style={styles.header}>Tarifs des Séances de Dien Chan</div>
+
         <table style={styles.table}>
           <thead>
             <tr>
@@ -34,10 +37,16 @@ export default function Tarifs() {
           </tbody>
         </table>
       </div>
+      <div>
+        Pour obtenir une formule personnalisée, contactez-moi personnellement
+        via la rubrique <Link href={"/contact"}>Contact</Link>.
+      </div>
       <div>Type de paiement accepté</div>
-      <div>CB, Paypal, etc</div>
-      <div>Prendre Rendez-vous</div>
-    </div>
+      <div>CB, Paypal, Espèces et Bitcoin</div>
+      <Link href={"/contact"}>
+        <div>Prendre Rendez-vous</div>
+      </Link>
+    </main>
   );
 }
 
